@@ -1,0 +1,17 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: GestionLibros
+      POSTGRES_USER: tu_usuario
+      POSTGRES_PASSWORD: tu_password
+    ports:
+      - "5432:5432"
+
+  microservicio-java:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
