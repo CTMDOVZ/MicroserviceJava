@@ -3,16 +3,16 @@ package com.proyecto.controller;
 import com.proyecto.model.Libro;
 import com.proyecto.repository.LibroRepository;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.http.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 import java.util.Optional;
 
-
 @RestController
 @RequestMapping("/api/libros")
 public class LibroController {
+
     @Autowired
     private LibroRepository libroRepository;
 
@@ -38,4 +38,3 @@ public class LibroController {
         return ResponseEntity.noContent().build();
     }
 }
-
